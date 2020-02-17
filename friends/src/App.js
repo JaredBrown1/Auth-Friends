@@ -5,7 +5,7 @@ import "./App.css";
 //components
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Friends from "./components/Friends";
+import FriendsList from "./components/Friends";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Link to="/protected">Friends</Link>
         </nav>
         <Switch>
-          <ProtectedRoute exact path="/protected" component={Friends} />
+          <ProtectedRoute exact path="/protected" component={FriendsList} />
           <Route path="/login" component={Login} />
           <Route component={Login} />
         </Switch>
