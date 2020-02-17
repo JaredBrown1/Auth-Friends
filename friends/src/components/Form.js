@@ -1,6 +1,30 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+const FriendForm = styled.div``;
+
+const FormCont = styled.form`
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Inputs = styled.input`
+  margin: 0 auto;
+  width: 200px;
+  height: 60px;
+`;
+
+const FormButton = styled.button`
+  margin: 0 auto;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+`;
 
 const Form = () => {
   const [friend, setFriend] = useState({
@@ -23,32 +47,32 @@ const Form = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={newFriendSubmit}>
-        <input
+    <FriendForm>
+      <FormCont onSubmit={newFriendSubmit}>
+        <Inputs
           placeholder="Name"
           type="text"
           name="name"
           value={friend.name}
           onChange={handleChange}
         />
-        <input
+        <Inputs
           placeholder="Age"
           type="text"
           name="age"
           value={friend.age}
           onChange={handleChange}
         />
-        <input
+        <Inputs
           placeholder="Email"
           type="email"
           name="email"
           value={friend.email}
           onChange={handleChange}
         />
-        <button>Add</button>
-      </form>
-    </div>
+        <FormButton>Add</FormButton>
+      </FormCont>
+    </FriendForm>
   );
 };
 
